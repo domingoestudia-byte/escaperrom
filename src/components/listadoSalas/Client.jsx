@@ -35,7 +35,7 @@ const ESTILOS_DEFAULT = {
 }
 
 const HORAS     = ['20:00', '21:00', '22:00', '23:00', '00:00', '01:00', '02:00']
-const DURACIONES = ['1 hora', '2 horas', '3 horas', '4 horas']
+const DURACIONES = ['1 hora 30 euros']
 
 export default function VipClient({ salas }) {
   const router = useRouter()
