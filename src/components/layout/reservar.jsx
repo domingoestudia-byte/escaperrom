@@ -5,17 +5,8 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 const NAV_CLIENTE = [
-  { icon: ShoppingCart, label: 'Pedir',    href: '/' },
-  { icon: Crown,        label: 'Salas VIP', href: '/vip' },
-  { icon: User,         label: 'Mi área',   href: '/mi-area' },
-  { icon: UserCircle,   label: 'Perfil',    href: '/perfil' },
-]
-
-const NAV_GESTION = [
-  { icon: ShieldCheck,     label: 'Staff',    href: '/staff',    roles: ['staff', 'admin'] },
-  { icon: QrCode,          label: 'Porteros', href: '/porteros', roles: ['portero', 'staff', 'admin'] },
-  { icon: LayoutDashboard, label: 'Admin',    href: '/admin',    roles: ['admin'] },
-]
+  { icon: Crown,        label: 'Salas scaperoom', href: '/vip' },
+ ]
 
 export default function BottomNav({ rol }) {
   const pathname = usePathname()
