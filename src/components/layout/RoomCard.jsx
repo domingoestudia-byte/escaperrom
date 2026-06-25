@@ -2,7 +2,7 @@
 
 import { usePathname } from 'next/navigation'
 import Sidebar from '@/components/layout/Sidebar'
-import BottomNav from './BottomNav'
+import BottomNav from './reservar'
 
 const AUTH_ROUTES = ['/login', '/register']
 

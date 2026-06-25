@@ -2,7 +2,6 @@
 
 import { useState, useTransition } from 'react'
 import { useRouter } from 'next/navigation'
-import { Crown, Users, Clock } from 'lucide-react'
 import { iniciarPagoReserva } from '@/lib/actions/reservas'
 
 const ESTILOS_SALA = {

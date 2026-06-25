@@ -1,6 +1,6 @@
 import './globals.css'
 import { Playfair_Display, Raleway } from 'next/font/google'
-import Shell from '@/components/layout/Shell'
+import Shell from '@/components/layout/RoomCard'
 import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 
@@ -17,8 +17,8 @@ const raleway = Raleway({
 })
 
 export const metadata = {
-  title: 'Flex — Live Sessions',
-  description: 'Tu noche, tu ritmo',
+  title: 'escaperoom',
+  description: 'escapismo',
 }
 
 export default async function RootLayout({ children }) {

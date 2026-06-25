@@ -1,20 +1,13 @@
 'use client'
 
 import { useState } from 'react'
-import { MapPin, ShoppingBag } from 'lucide-react'
+
 
 const TABS = [
-  { id: 'pedidos', label: 'Pedidos', icon: ShoppingBag },
+
   { id: 'zonas', label: 'Mis zonas', icon: MapPin },
 ]
 
-const ESTADO_PEDIDO = {
-  entregado: { label: 'Entregado', cls: 'bg-emerald-500/20 text-emerald-400' },
-  listo: { label: 'Listo', cls: 'bg-emerald-500/20 text-emerald-400' },
-  en_barra: { label: 'En camino', cls: 'bg-amber-500/20 text-amber-400' },
-  pendiente: { label: 'Pendiente', cls: 'bg-amber-500/20 text-amber-400' },
-  cancelado: { label: 'Cancelado', cls: 'bg-zinc-700 text-zinc-500' },
-}
 
 const ESTADO_RESERVA = {
   pendiente: { label: 'Pendiente', cls: 'bg-amber-500/20 text-amber-400' },
@@ -29,7 +22,7 @@ function formatFecha(iso) {
   })
 }
 
-export default function MiAreaClient({ perfil, pedidos, reservas }) {
+export default function MiAreaClient({ perfil, reservas }) {
   const [tab, setTab] = useState('pedidos')
 
   return (
@@ -85,45 +78,9 @@ export default function MiAreaClient({ perfil, pedidos, reservas }) {
         </div>
       )}
 
-      {/* Pedidos */}
-      {tab === 'pedidos' && (
-        <div className="space-y-4 max-w-2xl">
-          {pedidos.length === 0 && (
-            <p className="text-zinc-500 text-sm">No tienes pedidos.</p>
-          )}
-          {pedidos.map(p => {
-            const total = p.total ?? p.pedido_items.reduce((s, i) => s + i.precio_unit * i.cantidad, 0)
-            const estado = ESTADO_PEDIDO[p.estado] ?? { label: p.estado, cls: 'bg-zinc-700 text-zinc-400' }
-            return (
-              <div key={p.id} className="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
-                <div className="flex items-center justify-between mb-3">
-                  <div>
-                    <p className="text-zinc-100 font-medium text-sm">
-                      {p.mesas ? `Mesa ${p.mesas.numero}` : 'Sin mesa'}
-                    </p>
-                    <p className="text-zinc-500 text-xs">{formatFecha(p.creado_en)}</p>
-                  </div>
-                  <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${estado.cls}`}>
-                    {estado.label}
-                  </span>
-                </div>
-                <ul className="space-y-1 border-t border-zinc-800 pt-3">
-                  {p.pedido_items.map((item, i) => (
-                    <li key={i} className="flex justify-between text-sm">
-                      <span className="text-zinc-400">{item.cantidad}× {item.productos?.nombre}</span>
-                      <span className="text-zinc-500">{(item.precio_unit * item.cantidad).toFixed(2)} €</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="flex justify-between items-center mt-3 pt-3 border-t border-zinc-800">
-                  <span className="text-zinc-500 text-xs">Total</span>
-                  <span className="text-amber-400 font-bold">{Number(total).toFixed(2)} €</span>
-                </div>
-              </div>
-            )
-          })}
-        </div>
-      )}
+      
+    
+   
     </div>
   )
 }

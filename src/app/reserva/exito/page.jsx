@@ -28,10 +28,6 @@ export default async function PaginaExitoReserva({ searchParams }) {
         <p>Inicio: {new Date(reserva.inicio).toLocaleString('es-ES')}</p>
         <p className="text-amber-400 font-bold text-xl">{reserva.total} € pagados</p>
       </div>
-      <p className="text-zinc-500 text-sm">Tu entrada con código QR ya está disponible en tu perfil.</p>
-      <Link href="/mi-area" className="px-6 py-2.5 bg-amber-500 hover:bg-amber-600 text-zinc-950 font-bold rounded-xl text-sm">
-        Ver mis reservas
-      </Link>
     </div>
   )
 }

@@ -11,23 +11,23 @@ const RUTAS_ROL = [
   { path: '/porteros', roles: ['portero', 'admin'] },
 ]
 
-// function crearClienteSupabase(request, getResponse) {
-//   return createServerClient(
-//     process.env.NEXT_PUBLIC_SUPABASE_URL,
-//     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
-//     {
-//       cookies: {
-//         getAll: () => request.cookies.getAll(),
-//         setAll: (cookiesToSet) => {
-//           cookiesToSet.forEach(({ name, value }) => request.cookies.set(name, value))
-//           const res = NextResponse.next({ request })
-//           cookiesToSet.forEach(({ name, value, options }) => res.cookies.set(name, value, options))
-//           getResponse(res)
-//         },
-//       },
-//     }
-//   )
-// }
+function crearClienteSupabase(request, getResponse) {
+  return createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+    {
+      cookies: {
+        getAll: () => request.cookies.getAll(),
+        setAll: (cookiesToSet) => {
+          cookiesToSet.forEach(({ name, value }) => request.cookies.set(name, value))
+          const res = NextResponse.next({ request })
+          cookiesToSet.forEach(({ name, value, options }) => res.cookies.set(name, value, options))
+          getResponse(res)
+        },
+      },
+    }
+  )
+}
 
 export async function proxy(request) {
   let supabaseResponse = NextResponse.next({ request })
