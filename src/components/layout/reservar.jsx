@@ -1,11 +1,11 @@
 'use client'
 
-// import { LayoutGrid, X, ShoppingCart, Crown, User, UserCircle, ShieldCheck, QrCode, LayoutDashboard } from 'lucide-react'
-import Link from 'next/link'
+
+
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 const NAV_CLIENTE = [
-  { icon: Crown,        label: 'Salas scaperoom', href: '/vip' },
+  { icon: Crown,        label: 'Salas scaperoom', href: '/salas' },
  ]
 
 export default function BottomNav({ rol }) {

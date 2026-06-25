@@ -28,18 +28,7 @@ export async function POST(req) {
       }, { status: 400 })
     }
 
-    // --- ¿El usuario ya tiene tarjeta guardada? ---
-    const { data: perfil, error: perfilError } = await supabase
-      .from('perfiles')
-      .select('stripe_customer_id')
-      .eq('id', clienteId)
-      .single()
-
-    if (perfilError) {
-      console.error('Error al buscar perfil:', perfilError)
-      return NextResponse.json({ error: perfilError.message }, { status: 500 })
-    }
-
+ 
     let stripeCustomerId = perfil?.stripe_customer_id
 
     if (!stripeCustomerId) {

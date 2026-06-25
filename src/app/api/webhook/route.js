@@ -42,22 +42,11 @@ export async function POST(req) {
         .eq('estado_pago', 'pendiente')
     }
 
-    if (tipo === 'pedido') {
-      // Igual: solo actualizamos estado_pago, el estado de cocina lo gestiona el staff
-      await supabase
-        .from('pedidos')
-        .update({
-          estado_pago:    'pagado',
-          stripe_payment: session.payment_intent,
-        })
-        .eq('id', id)
-        .eq('estado_pago', 'pendiente')
-    }
   }
 
   if (evento.type === 'checkout.session.expired') {
     // El usuario no pagó en 30 minutos → cancelamos el pago
-    const tabla = tipo === 'reserva' ? 'reservas' : 'pedidos'
+    const tabla = tipo === 'reserva' ? 'reservas' : 'pendiente'
     await supabase
       .from(tabla)
       .update({ estado_pago: 'cancelado' })

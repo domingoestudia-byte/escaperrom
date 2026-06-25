@@ -9,7 +9,7 @@
 }
 
 :root {
-  --background: #0a0a0a;
+  --background: #24995e;
   --foreground: #ededed;
 }
 
@@ -34,9 +34,9 @@ h1, h2, h3 {
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-zinc-900;
+  @apply bg-zinc-800;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-zinc-700 rounded-full;
+  @apply bg-zinc-400 rounded-full;
 }

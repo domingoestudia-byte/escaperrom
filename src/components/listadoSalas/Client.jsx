@@ -6,25 +6,26 @@ import { Crown, Users, Clock } from 'lucide-react'
 import { iniciarPagoReserva } from '@/lib/actions/reservas'
 
 const ESTILOS_SALA = {
-  'Sala 1': {
+  'Sala 1 modulo en el que haciamos console log': {
     color:  'from-red-900/40 to-red-800/20',
     borde:  'border-red-700/40',
     acento: 'text-red-400',
     badge:  'bg-red-500/20 text-red-400',
   },
-  'Sala 2': {
+  'Sala 2 un horror, no sé ni como se te ocurrió ': {
     color:  'from-zinc-800/60 to-zinc-900/40',
     borde:  'border-zinc-600/40',
     acento: 'text-zinc-300',
     badge:  'bg-zinc-600/30 text-zinc-400',
   },
-  'Sala 3': {
+  'Sala 3 el vacio , vamos a moriir todos ': {
     color:  'from-yellow-900/40 to-amber-800/20',
     borde:  'border-amber-500/40',
     acento: 'text-amber-400',
     badge:  'bg-amber-500/20 text-amber-400',
   },
 }
+
 
 const ESTILOS_DEFAULT = {
   color:  'from-zinc-800/40 to-zinc-900/20',

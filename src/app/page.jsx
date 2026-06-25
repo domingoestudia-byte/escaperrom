@@ -5,19 +5,19 @@ import { useRouter } from 'next/navigation'
 import { iniciarPagoReserva } from '@/lib/actions/reservas'
 
 const ESTILOS_SALA = {
-  'Sala 1': {
+  'Sala 1 modulo en el que haciamos console log': {
     color:  'from-red-900/40 to-red-800/20',
     borde:  'border-red-700/40',
     acento: 'text-red-400',
     badge:  'bg-red-500/20 text-red-400',
   },
-  'Sala 2': {
+  'Sala 2 un horror, no sé ni como se te ocurrió ': {
     color:  'from-zinc-800/60 to-zinc-900/40',
     borde:  'border-zinc-600/40',
     acento: 'text-zinc-300',
     badge:  'bg-zinc-600/30 text-zinc-400',
   },
-  'Sala 3': {
+  'Sala 3 el vacio , vamos a moriir todos ': {
     color:  'from-yellow-900/40 to-amber-800/20',
     borde:  'border-amber-500/40',
     acento: 'text-amber-400',
@@ -66,7 +66,7 @@ export default function VipClient({ salas }) {
     <div className="p-4 sm:p-8">
       <div className="mb-8">
         <h1 className="text-xl sm:text-2xl font-bold text-zinc-100">Salas room</h1>
-        <p className="text-zinc-500 text-sm mt-1">Reserva una sala de escape para tu grupo</p>
+        <p className="text-zinc-500 text-sm mt-1">Reserva una sala de escape para tu grupo de ilusos que se metieron a este modulo</p>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">

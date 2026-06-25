@@ -1,5 +1,4 @@
 import { createClient } from '@/lib/supabase/server'
-import Link from 'next/link'
 
 export default async function PaginaExitoReserva({ searchParams }) {
   const { reserva_id: reservaId } = await searchParams
